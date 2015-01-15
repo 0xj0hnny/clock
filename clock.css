@@ -1,0 +1,430 @@
+body {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  background: #e0e0e0;
+  font-family: "Helvetica Neue"; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.container {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .container .clock-container {
+    float: left;
+    width: 75%;
+    height: 100%;
+    position: relative;
+    display: inline-block; }
+    .container .clock-container .clock {
+      font-size: 1em;
+      position: relative; }
+      .container .clock-container .clock .clock-frame {
+        position: relative;
+        width: 30em;
+        height: 30em;
+        margin: 2em auto;
+        border-radius: 15em;
+        background: -webkit-linear-gradient(top, #f9f9f9, #666666);
+        background: -moz-linear-gradient(top, #f9f9f9, #666666);
+        background: linear-gradient(to bottom, #f9f9f9, #666666);
+        box-shadow: rgba(0, 0, 0, 0.8) 0.5em 0.5em 4em; }
+      .container .clock-container .clock .clock-frame:before {
+        content: "";
+        width: 29.4em;
+        height: 29.4em;
+        border-radius: 14.7em;
+        position: absolute;
+        top: 0.3em;
+        left: 0.3em;
+        background: -webkit-linear-gradient(135deg, rgba(246, 248, 249, 0) 0%, #e5ebee 50%, #cdd4d9 51%, rgba(245, 247, 249, 0) 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #f6f8f9 0%, #e5ebee 65%, #cdd4d9 66%, #f5f7f9 100%);
+        background: linear-gradient(135deg, rgba(246, 248, 249, 0) 0%, #e5ebee 50%, #cdd4d9 51%, rgba(245, 247, 249, 0) 100%);
+        background: radial-gradient(ellipse at center, #f6f8f9 0%, #e5ebee 65%, #cdd4d9 66%, #f5f7f9 100%); }
+      .container .clock-container .clock .clock-frame:after {
+        content: "";
+        width: 28em;
+        height: 28em;
+        border-radius: 14.2em;
+        position: absolute;
+        top: 0.9em;
+        left: 0.9em;
+        box-shadow: inset rgba(0, 0, 0, 0.2) 0.2em 0.2em 1em;
+        border: 0.1em solid rgba(0, 0, 0, 0.2);
+        background: -webkit-linear-gradient(top, white, #cccccc);
+        background: -moz-linear-gradient(top, white, #cccccc);
+        background: linear-gradient(to bottom, white, #cccccc); }
+      .container .clock-container .clock .minute-marks li {
+        display: block;
+        width: 0.2em;
+        height: 0.6em;
+        background: #929394;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -0.4em 0 0 -0.1em;
+        /* Here I used a for loop to calclate the minute marks on the clock.
+         * I know that each minute marks are seperated by 6 deg for four consecutive
+         * minute marks, but it seperate by 12 deg between fourth & the 5th minute marks
+         * so I used a equation 6*(i+x), where i is the loop between 1 to 48
+         * and x is the determine factor for the degree of seperation */ }
+      .container .clock-container .clock .minute-marks li:nth-child(1) {
+        transform: rotate(6deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(2) {
+        transform: rotate(12deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(3) {
+        transform: rotate(18deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(4) {
+        transform: rotate(24deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(5) {
+        transform: rotate(36deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(6) {
+        transform: rotate(42deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(7) {
+        transform: rotate(48deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(8) {
+        transform: rotate(54deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(9) {
+        transform: rotate(66deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(10) {
+        transform: rotate(72deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(11) {
+        transform: rotate(78deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(12) {
+        transform: rotate(84deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(13) {
+        transform: rotate(96deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(14) {
+        transform: rotate(102deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(15) {
+        transform: rotate(108deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(16) {
+        transform: rotate(114deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(17) {
+        transform: rotate(126deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(18) {
+        transform: rotate(132deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(19) {
+        transform: rotate(138deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(20) {
+        transform: rotate(144deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(21) {
+        transform: rotate(156deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(22) {
+        transform: rotate(162deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(23) {
+        transform: rotate(168deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(24) {
+        transform: rotate(174deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(25) {
+        transform: rotate(186deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(26) {
+        transform: rotate(192deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(27) {
+        transform: rotate(198deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(28) {
+        transform: rotate(204deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(29) {
+        transform: rotate(216deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(30) {
+        transform: rotate(222deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(31) {
+        transform: rotate(228deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(32) {
+        transform: rotate(234deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(33) {
+        transform: rotate(246deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(34) {
+        transform: rotate(252deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(35) {
+        transform: rotate(258deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(36) {
+        transform: rotate(264deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(37) {
+        transform: rotate(276deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(38) {
+        transform: rotate(282deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(39) {
+        transform: rotate(288deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(40) {
+        transform: rotate(294deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(41) {
+        transform: rotate(306deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(42) {
+        transform: rotate(312deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(43) {
+        transform: rotate(318deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(44) {
+        transform: rotate(324deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(45) {
+        transform: rotate(336deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(46) {
+        transform: rotate(342deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(47) {
+        transform: rotate(348deg) translateY(-12.7em); }
+      .container .clock-container .clock .minute-marks li:nth-child(48) {
+        transform: rotate(354deg) translateY(-12.7em); }
+      .container .clock-container .clock .digits {
+        width: 30em;
+        height: 30em;
+        border-radius: 15em;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -15em;
+        /*it is harder to do another for loop here so I just list all out */ }
+        .container .clock-container .clock .digits li {
+          font-size: 1.6em;
+          display: block;
+          width: 1.6em;
+          height: 1.6em;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          line-height: 1.6em;
+          text-align: center;
+          margin: -0.8em 0 0 -0.8em;
+          font-weight: bold; }
+        .container .clock-container .clock .digits li:nth-child(1) {
+          transform: translate(3.9em, -6.9em); }
+        .container .clock-container .clock .digits li:nth-child(2) {
+          transform: translate(6.9em, -4em); }
+        .container .clock-container .clock .digits li:nth-child(3) {
+          transform: translate(8em, 0em); }
+        .container .clock-container .clock .digits li:nth-child(4) {
+          transform: translate(6.8em, 4em); }
+        .container .clock-container .clock .digits li:nth-child(5) {
+          transform: translate(3.9em, 6.9em); }
+        .container .clock-container .clock .digits li:nth-child(6) {
+          transform: translate(0em, 8em); }
+        .container .clock-container .clock .digits li:nth-child(7) {
+          transform: translate(-3.9em, 6.9em); }
+        .container .clock-container .clock .digits li:nth-child(8) {
+          transform: translate(-6.8em, 4em); }
+        .container .clock-container .clock .digits li:nth-child(9) {
+          transform: translate(-8em, 0em); }
+        .container .clock-container .clock .digits li:nth-child(10) {
+          transform: translate(-6.9em, -4em); }
+        .container .clock-container .clock .digits li:nth-child(11) {
+          transform: translate(-3.9em, -6.9em); }
+        .container .clock-container .clock .digits li:nth-child(12) {
+          transform: translate(0em, -8em); }
+      .container .clock-container .clock .digits:before {
+        content: "";
+        width: 1.6em;
+        height: 1.6em;
+        border-radius: 0.8em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -0.8em;
+        margin-left: -0.8em;
+        background: #121314; }
+      .container .clock-container .clock .digits:after {
+        content: "";
+        width: 4em;
+        height: 4em;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -2.1em;
+        margin-left: -2.1em;
+        border: 0.1em solid #c6c6c6;
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(200, 200, 200, 0), #bebebe 90%, #828282 100%);
+        background: -moz-radial-gradient(center, ellipse cover, rgba(200, 200, 200, 0), #bebebe 90%, #828282 100%);
+        background: radial-gradient(ellipse at center, rgba(200, 200, 200, 0), #bebebe 90%, #828282 100%); }
+      .container .clock-container .clock .day {
+        position: absolute;
+        top: 50%;
+        right: 12%;
+        width: 40px;
+        height: 30px;
+        overflow: hidden;
+        margin: -15px 0 0;
+        background: #cccccc;
+        border-radius: 3px; }
+        .container .clock-container .clock .day em {
+          display: block;
+          height: 30px;
+          line-height: 30px;
+          vertical-align: middle;
+          text-align: center;
+          font-family: Courier New, monospace;
+          font-size: 18px;
+          color: #999999 s;
+          transition: margin-top 0.25s; }
+      .container .clock-container .clock .hours {
+        width: 0.8em;
+        height: 7em;
+        border-radius: 0 0 0.9em 0.9em;
+        background: #342425;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        margin: 0 0 -0.8em -0.4em;
+        box-shadow: #232425 0 0 2px;
+        transform-origin: 0.4em 6.2em; }
+      .container .clock-container .clock .hours:before {
+        content: "";
+        background: inherit;
+        width: 1.8em;
+        height: 0.8em;
+        border-radius: 0 0 0.8em 0.8em;
+        box-shadow: #232425 0 0 1px;
+        position: absolute;
+        top: -0.7em;
+        left: -0.5em; }
+      .container .clock-container .clock .hours:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 0.9em solid #232425;
+        border-width: 0 0.9em 2.4em 0.9em;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        position: absolute;
+        top: -3.1em;
+        left: -0.5em; }
+      .container .clock-container .clock .minutes {
+        width: 0.8em;
+        height: 12.5em;
+        border-radius: 0.5em;
+        background: #343536;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        margin: 0 0 -1.5em -0.4em;
+        box-shadow: #343536 0 0 2px;
+        transform-origin: 0.4em 11em; }
+      .container .clock-container .clock .seconds {
+        width: 0.2em;
+        height: 14em;
+        border-radius: 0.1em 0.1em 0 0/10em 10em 0 0;
+        background: #cc0000;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        margin-bottom: -2em;
+        margin-left: -0.1em;
+        box-shadow: rgba(0, 0, 0, 0.8) 0 0 0.2em;
+        transform-origin: 0.1em 12em; }
+      .container .clock-container .clock .seconds:before {
+        content: "";
+        width: 0.8em;
+        height: 3em;
+        border-radius: 0.2em 0.2em 0.4em 0.4em/0.2em 0.2em 2em 2em;
+        box-shadow: rgba(0, 0, 0, 0.8) 0 0 0.2em;
+        background: inherit;
+        position: absolute;
+        left: -0.25em;
+        bottom: -3em; }
+      .container .clock-container .clock .seconds:after {
+        content: "";
+        width: 1.4em;
+        height: 1.4em;
+        border-radius: 0.7em;
+        background: inherit;
+        position: absolute;
+        left: -0.6em;
+        bottom: 1.35em; }
+  .container #time-select {
+    height: 100%;
+    width: 18%;
+    float: right;
+    display: inline-block;
+    background: #1abc9c; }
+    .container #time-select h1 {
+      font-weight: 500;
+      font-size: 2.5em;
+      padding-left: 10px;
+      text-transform: uppercase; }
+    .container #time-select .change li {
+      font-size: 1.8em;
+      padding: 10px 10px 10px 30px;
+      height: 20px;
+      list-style: none;
+      cursor: pointer; }
+    .container #time-select .change li.selected {
+      background: white;
+      color: black; }
+  .container #icon-container {
+    width: 5%;
+    height: 100%;
+    display: block;
+    float: left; }
+    .container #icon-container .day_icon {
+      position: absolute;
+      top: 80px;
+      left: 50px; }
+      .container #icon-container .day_icon .sun {
+        width: 22px;
+        height: 22px;
+        border: 3px solid black;
+        border-radius: 50%;
+        background: yellow; }
+      .container #icon-container .day_icon .is_shining .shine {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -3px 0 0 -1px;
+        width: 2px;
+        height: 6px;
+        background: black; }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(1) {
+        transform: rotate(30deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(2) {
+        transform: rotate(60deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(3) {
+        transform: rotate(90deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(4) {
+        transform: rotate(120deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(5) {
+        transform: rotate(150deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(6) {
+        transform: rotate(180deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(7) {
+        transform: rotate(210deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(8) {
+        transform: rotate(240deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(9) {
+        transform: rotate(270deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(10) {
+        transform: rotate(300deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(11) {
+        transform: rotate(330deg) translate(0px, -20px); }
+      .container #icon-container .day_icon .is_shining .shine:nth-child(12) {
+        transform: rotate(360deg) translate(0px, -20px); }
+    .container #icon-container .night_icon {
+      position: absolute;
+      top: 80px;
+      left: 50px;
+      z-index: 10000;
+      display: none;
+      width: 250px;
+      height: 250px; }
+      .container #icon-container .night_icon .icon {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%; }
+      .container #icon-container .night_icon .icon1 {
+        top: -1px;
+        left: 7px;
+        z-index: 3;
+        width: 20px;
+        height: 20px;
+        background: yellow;
+        border: 2px solid white; }
+      .container #icon-container .night_icon .icon2 {
+        top: -7px;
+        left: 14px;
+        z-index: 4;
+        width: 30px;
+        height: 30px;
+        background: black; }

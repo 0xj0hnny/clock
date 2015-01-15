@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock 2</title>
+	<link rel="stylesheet" type="text/css" href="clock.css">
+	<script src="jquery.js"></script>
+</head>
+<body>		
+
+	<div class="container day">
+		<div id="icon-container">
+			<div class="day_icon">
+				<div class="sun"></div>
+				<div class="is_shining">
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+					<div class="shine"></div>
+				</div>
+			</div>
+			
+			<div class="night_icon">
+				<div class="icon icon1"></div>
+				<div class="icon icon2"></div>
+    	</div>
+		</div>
+		<div class="clock-container">
+			<div class="clock">
+				<div class="clock-frame"></div>
+				<ul class="minute-marks">
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  	  <li></li><li></li><li></li><li></li><li></li><li></li>
+	  		</ul>
+	  		<ul class="digits">
+	  		  <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+	  		  <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>
+				<span class="day">
+	  		  <em>0</em>	
+	  		  <em>0</em>
+	  		</span>
+	  		</ul>
+				<span class="hours"></span>
+				<span class="minutes"></span>
+				<span class="seconds"></span>			
+			</div>			
+		</div>	
+	
+		<div id="time-select">
+			<h1>Select a time zone: </h1>
+			<ul class="change">
+				<li role="99">Current Location</li>
+				<li role="-5">Eastern Time</li>
+				<li role="-6">Central Time</li>
+				<li role="-7">Mountain Time</li>
+				<li role="-8">Pacific Time</li>
+			</ul>
+		</div>
+	
+			
+	</div>
+	<script type="text/javascript" src="clock.js"></script>
+</body>
+</html>

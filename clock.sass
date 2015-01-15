@@ -1,0 +1,354 @@
+//sass mixin function for quickly setup size of a div
+=size($num) 
+	width: $num
+	height: $num
+
+body
+	font-size: 62.5% 
+	padding: 0
+	margin: 0
+	background: #e0e0e0
+	font-family: 'Helvetica Neue'
+
+ul 
+	list-style: none
+	margin: 0
+	padding: 0
+
+.container
+	display: block
+	position: absolute
+	+size(100%)
+
+	.clock-container
+		float: left	
+		width: 75%
+		height: 100%
+		position: relative
+		display: inline-block
+
+		.clock
+			font-size: 1em
+			position: relative
+
+		
+			.clock-frame
+				position: relative
+				+size(30em)
+				margin: 2em auto
+				border-radius: 15em
+				background: -webkit-linear-gradient(top, #f9f9f9, #666)
+				background: -moz-linear-gradient(top, #f9f9f9, #666)
+				background: linear-gradient(to bottom, #f9f9f9, #666)
+				box-shadow: rgba(0, 0, 0, 0.8) 0.5em	0.5em	4em
+		
+			.clock-frame:before
+				content: ''
+				+size(29.4em)
+				border-radius: 14.7em
+				position: absolute
+				top: 0.3em
+				left: 0.3em 
+				background: -webkit-linear-gradient(135deg, rgba(246,248,249,0) 0%,rgba(229,235,238,1) 50%,rgba(205,212,217,1) 51%,rgba(245,247,249,0) 100%)
+				background:	-webkit-radial-gradient(center, ellipse cover, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 65%,rgba(205,212,217,1) 66%,rgba(245,247,249,1) 100%)
+				background: linear-gradient(135deg, rgba(246,248,249,0) 0%,rgba(229,235,238,1) 50%,rgba(205,212,217,1) 51%,rgba(245,247,249,0) 100%)
+				background: radial-gradient(ellipse at center, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 65%,rgba(205,212,217,1) 66%,rgba(245,247,249,1) 100%)
+
+			.clock-frame:after
+				content: ''
+				+size(28em)
+				border-radius: 14.2em
+				position: absolute
+				top: 0.9em
+				left: 0.9em
+				box-shadow: inset rgba(0, 0, 0, 0.2) 0.2em 0.2em 1em
+				border: 0.1em solid rgba(0, 0, 0, 0.2)
+				background: -webkit-linear-gradient(top, #fff, #ccc)
+				background: -moz-linear-gradient(top, #fff, #ccc)
+				background: linear-gradient(to bottom, #fff, #ccc)
+
+
+			.minute-marks
+				li 
+					display: block
+					width: 0.2em
+					height: 0.6em
+					background: #929394
+					position: absolute
+					top: 50%
+					left: 50%
+					margin: -0.4em 0 0 -0.1em
+					/* Here I used a for loop to calclate the minute marks on the clock. 
+						 I know that each minute marks are seperated by 6 deg for four consecutive
+						 minute marks, but it seperate by 12 deg between fourth & the 5th minute marks
+						 so I used a equation 6*(i+x), where i is the loop between 1 to 48
+						 and x is the determine factor for the degree of seperation */
+				@for $i from 1 through 48 
+					li:nth-child(#{$i})
+						transform: rotate(6*($i+(ceil($i/4)-1))+deg)	translateY(-12.7em)
+
+			.digits
+				+size(30em)
+				border-radius: 15em
+				position: absolute
+				top: 0
+				left: 50%
+				margin-left: -15em
+
+				li 
+					font-size: 1.6em
+					display: block
+					+size(1.6em)
+					position: absolute
+					top: 50%
+					left: 50%
+					line-height: 1.6em
+					text-align: center
+					margin: -0.8em 0 0 -0.8em
+					font-weight: bold
+				
+				/*it is harder to do another for loop here so I just list all out*/
+				li:nth-child(1)
+					transform: translate(3.9em, -6.9em)
+				li:nth-child(2)
+					transform: translate(6.9em, -4em)
+				li:nth-child(3)
+					transform: translate(8em, 0em)
+				li:nth-child(4)
+					transform: translate(6.8em, 4em)
+				li:nth-child(5)
+					transform: translate(3.9em, 6.9em)
+				li:nth-child(6)
+					transform: translate(0em, 8em)
+				li:nth-child(7)
+					transform: translate(-3.9em, 6.9em)
+				li:nth-child(8)
+					transform: translate(-6.8em, 4em)
+				li:nth-child(9)
+					transform: translate(-8em, 0em)
+				li:nth-child(10)
+					transform: translate(-6.9em, -4em)
+				li:nth-child(11)
+					transform: translate(-3.9em, -6.9em)
+				li:nth-child(12)
+					transform: translate(0em, -8em)
+
+			.digits:before
+				content: ''
+				+size(1.6em)
+				border-radius: 0.8em
+				position: absolute
+				top: 50%
+				left: 50%
+				margin-top: -0.8em 
+				margin-left: -0.8em
+				background: #121314
+
+			.digits:after
+				content: ''
+				+size(4em)
+				border-radius: 50%
+				position: absolute
+				top: 50%
+				left: 50%
+				margin-top: -2.1em  
+				margin-left: -2.1em
+				border: .1em solid #c6c6c6
+				background: -webkit-radial-gradient(center, ellipse cover, rgba(200,200,200,0), rgba(190,190,190,1) 90%, rgba(130,130,130,1) 100%)
+				background: -moz-radial-gradient(center, ellipse cover, rgba(200,200,200,0), rgba(190,190,190,1) 90%, rgba(130,130,130,1) 100%)
+				background: radial-gradient(ellipse at center, rgba(200,200,200,0), rgba(190,190,190,1) 90%, rgba(130,130,130,1) 100%)
+		  
+			.day
+				position: absolute
+				top: 50%
+				right: 12%
+				width: 40px
+				height: 30px
+				overflow: hidden
+				margin: -15px 0 0
+				background: #ccc
+				border-radius: 3px
+				
+				em 
+					display: block
+					height: 30px
+					line-height: 30px
+					vertical-align: middle
+					text-align: center
+					font-family: Courier New, monospace
+					font-size: 18px
+					color: #999s
+					transition: margin-top .25s
+
+			.hours
+				width: 0.8em
+				height: 7em
+				border-radius: 0 0 0.9em 0.9em
+				background: #342425
+				position: absolute
+				bottom: 50%
+				left: 50%
+				margin: 0 0 -0.8em -0.4em
+				box-shadow: #232425 0 0 2px
+				transform-origin: 0.4em 6.2em 
+
+			.hours:before
+				content: ''
+				background: inherit
+				width: 1.8em
+				height: 0.8em
+				border-radius: 0 0 0.8em 0.8em
+				box-shadow: #232425 0 0 1px
+				position: absolute
+				top: -0.7em
+				left: -0.5em
+
+			.hours:after
+				content: ''
+				+size(0)
+				border: 0.9em solid #232425
+				border-width: 0 .9em 2.4em .9em
+				border-left-color: transparent
+				border-right-color: transparent
+				position: absolute
+				top: -3.1em
+				left: -0.5em
+
+			.minutes
+				width: 0.8em 
+				height: 12.5em
+				border-radius: 0.5em
+				background: #343536
+				position: absolute
+				bottom: 50%
+				left: 50%
+				margin: 0 0 -1.5em -0.4em
+				box-shadow: #343536 0 0 2px
+				transform-origin: 0.4em 11em 
+
+			.seconds
+				width: 0.2em 
+				height: 14em
+				border-radius: 0.1em 0.1em 0 0/10em 10em 0 0 
+				background: #c00
+				position: absolute
+				bottom: 50%
+				left: 50%
+				margin-bottom: -2em
+				margin-left: -0.1em
+				box-shadow: rgba(0, 0, 0, 0.8) 0 0 0.2em
+				transform-origin: 0.1em 12em
+
+			.seconds:before
+				content: ''
+				width: 0.8em 
+				height: 3em
+				border-radius: 0.2em 0.2em 0.4em 0.4em/0.2em 0.2em 2em 2em
+				box-shadow: rgba(0, 0, 0, 0.8) 0 0 0.2em
+				background: inherit
+				position: absolute
+				left: -0.25em
+				bottom: -3em
+
+			.seconds:after
+				content: ''
+				width: 1.4em
+				height: 1.4em
+				border-radius: .7em
+				background: inherit
+				position: absolute
+				left: -0.6em
+				bottom: 1.35em
+
+	#time-select
+		height: 100%
+		width: 18%
+		float: right
+		display: inline-block
+		background: #1abc9c
+
+		h1
+			font-weight: 500
+			font-size: 2.5em
+			padding-left: 10px
+			text-transform: uppercase
+
+		.change
+
+			li
+				font-size: 1.8em
+				padding: 10px 10px 10px 30px
+				height: 20px
+				list-style: none
+				cursor: pointer
+
+			li.selected
+				background: #fff
+				color: #000
+
+	#icon-container
+		width: 5%
+		height: 100%
+		display: block
+		float: left
+
+		.day_icon
+			position: absolute
+			top: 80px
+			left: 50px
+
+			.sun
+				+size(22px)
+				border: 3px solid #000
+				border-radius: 50%
+				background: yellow
+			
+			.is_shining
+
+				.shine
+					position: absolute
+					top: 50%
+					left: 50%
+					margin: -3px 0 0 -1px
+					width: 2px
+					height: 6px
+					background: #000	
+				@for $i from 1 through 12 
+					.shine:nth-child(#{$i})
+						transform: rotate($i*30+deg) translate(0px, -20px)
+
+		.night_icon
+			position: absolute
+			top: 80px
+			left: 50px
+			z-index: 10000
+			display: none
+			+size(250px)
+
+			.icon
+				position: absolute
+				+size(22px)
+				border-radius: 50%
+
+
+			.icon1
+				top: -1px
+				left: 7px
+				z-index: 3
+				+size(20px)
+				background: yellow
+				border: 2px solid #fff
+
+			.icon2
+				top: -7px
+				left: 14px
+				z-index: 4
+				+size(30px)
+				background: #000
+				
+
+
+
+
+
+
